@@ -6,8 +6,8 @@ namespace RandomNamePrinter
     {
         static void Main(string[] args)
         {
-            string[] names = new string[30];
             int numberOfNames = 30;
+            string[] names = new string[numberOfNames];
             for (int i = 0; i < names.Length; i++)
             {
                 Console.WriteLine("Please enter a name:");
@@ -19,7 +19,7 @@ namespace RandomNamePrinter
                 }
                 names[i] = name;
             }
-            int randomInt = new Random().Next(0, numberOfNames - 1);
+            int randomInt = new Random().Next(0, numberOfNames);
             string nameWinner = names[randomInt];
             Console.WriteLine($"The winner is:{nameWinner}");
 
