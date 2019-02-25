@@ -23,10 +23,15 @@ namespace RandomNamePrinter
             string nameWinner = names[randomInt];
             Console.WriteLine($"The winner is:{nameWinner}");
 
+            Console.WriteLine("The other names are:");
+            for(int i=0; i< numberOfNames;i++)
+            {
+                if (i != randomInt)
+                {
+                    Console.WriteLine(names[i]);
+                }
+            }
 
-            //list all the of other names that did not win.
-
-            //pause with readline
             Console.ReadLine();
         }
     }
