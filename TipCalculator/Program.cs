@@ -8,10 +8,11 @@ namespace TipCalculator
         {
             double bill = 0;
             double tipPercent = 0;
-            //This is a typical way of doing a while loop when there is only one logical way to exit the loop 
-            //(ie. getting a parsable input), and you are ok with looping forever till that condition is met.
-            //Notice that I did a seperate loop for each entry. Why that instead of one loop for both entries?
-            while (true)
+
+            //Here is how you might do it if you only wanted to give them a limited amount of retries
+            int retries = 0;
+            int maxRetries = 5;
+            while (retries < maxRetries)
             {
                 Console.WriteLine("What was your bill amount?");
                 string billInput = Console.ReadLine();
@@ -23,10 +24,19 @@ namespace TipCalculator
                     break;
                 }
 
-                Console.WriteLine($"The value {billInput} is not a valid bill amount. Please try again.");
+                retries++;
+                if(retries < maxRetries)
+                {
+                    Console.WriteLine($"The value {billInput} is not a valid bill amount. Please try again.");            
+                }
+                else
+                {
+                    Console.WriteLine("You have reached the max number of retries.");
+                }
             }
 
-            while (true)
+            retries = 0;
+            while (retries < maxRetries)
             { 
                 Console.WriteLine("What percent would you like to tip?");
                 string tipPercentInput = Console.ReadLine();
@@ -37,7 +47,15 @@ namespace TipCalculator
                     break;
                 }
 
-                Console.WriteLine($"The value {tipPercentInput} is not a valid tip. Please try again.");
+                retries++;
+                if (retries < maxRetries)
+                {
+                    Console.WriteLine($"The value {tipPercentInput} is not a valid tip. Please try again.");
+                }
+                else
+                {
+                    Console.WriteLine("You have reached the max number of retries.");
+                }
             }
 
             double tipAmount = Math.Round(tipPercent * bill / 100, 2);
