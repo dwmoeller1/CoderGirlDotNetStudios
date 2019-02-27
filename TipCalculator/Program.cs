@@ -6,8 +6,8 @@ namespace TipCalculator
     {
         static void Main(string[] args)
         {
-            double bill = 0;
-            double tipPercent = 0;
+            decimal bill = 0;
+            decimal tipPercent = 0;
             //This is a typical way of doing a while loop when there is only one logical way to exit the loop 
             //(ie. getting a parsable input), and you are ok with looping forever till that condition is met.
             //Notice that I did a seperate loop for each entry. Why that instead of one loop for both entries?
@@ -18,7 +18,7 @@ namespace TipCalculator
 
                 billInput = billInput.Trim().Trim('$');
 
-                if (double.TryParse(billInput, out bill))
+                if (decimal.TryParse(billInput, out bill))
                 {                    
                     break;
                 }
@@ -32,7 +32,7 @@ namespace TipCalculator
                 string tipPercentInput = Console.ReadLine();
                 tipPercentInput = tipPercentInput.Trim().Trim('%');
 
-                if (double.TryParse(tipPercentInput, out tipPercent))
+                if (decimal.TryParse(tipPercentInput, out tipPercent))
                 {
                     break;
                 }
@@ -40,8 +40,8 @@ namespace TipCalculator
                 Console.WriteLine($"The value {tipPercentInput} is not a valid tip. Please try again.");
             }
 
-            double tipAmount = Math.Round(tipPercent * bill / 100, 2);
-            double totalBill = Math.Round(bill + tipAmount, 2);
+            decimal tipAmount = Math.Round(tipPercent * bill / 100, 2);
+            decimal totalBill = Math.Round(bill + tipAmount, 2);
 
             Console.WriteLine($"You tip amount is ${tipAmount}.");
             Console.WriteLine($"Your total bill ${totalBill}.");
