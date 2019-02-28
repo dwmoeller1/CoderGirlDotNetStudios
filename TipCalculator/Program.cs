@@ -8,15 +8,13 @@ namespace TipCalculator
         {
             decimal bill = 0;
             decimal tipPercent = 0;
-
-            //Here is how you might do it if you only wanted to give them a limited amount of retries
             int retries = 0;
             int maxRetries = 5;
+
             while (retries < maxRetries)
             {
                 Console.WriteLine("What was your bill amount?");
                 string billInput = Console.ReadLine();
-
                 billInput = billInput.Trim().Trim('$');
 
                 if (decimal.TryParse(billInput, out bill))
@@ -25,14 +23,7 @@ namespace TipCalculator
                 }
 
                 retries++;
-                if(retries < maxRetries)
-                {
-                    Console.WriteLine($"The value {billInput} is not a valid bill amount. Please try again.");            
-                }
-                else
-                {
-                    Console.WriteLine("You have reached the max number of retries.");
-                }
+                PrintRetryResponse(retries, maxRetries, billInput);
             }
 
             retries = 0;
@@ -48,14 +39,7 @@ namespace TipCalculator
                 }
 
                 retries++;
-                if (retries < maxRetries)
-                {
-                    Console.WriteLine($"The value {tipPercentInput} is not a valid tip. Please try again.");
-                }
-                else
-                {
-                    Console.WriteLine("You have reached the max number of retries.");
-                }
+                PrintRetryResponse(retries, maxRetries, tipPercentInput);
             }
 
             decimal tipAmount = Math.Round(tipPercent * bill / 100, 2);
@@ -65,6 +49,18 @@ namespace TipCalculator
             Console.WriteLine($"Your total bill ${totalBill}.");
 
             Console.ReadLine();
+        }
+
+        static void PrintRetryResponse(int retries, int maxRetries, string userInput)
+        {
+            if (retries < maxRetries)
+            {
+                Console.WriteLine($"The value {userInput} is not a valid amount. Please try again.");
+            }
+            else
+            {
+                Console.WriteLine("You have reached the max number of retries.");
+            }
         }
     }
 }
