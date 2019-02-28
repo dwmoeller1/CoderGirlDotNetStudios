@@ -6,8 +6,8 @@ namespace TipCalculator
     {
         static void Main(string[] args)
         {
-            double bill = 0;
-            double tipPercent = 0;
+            decimal bill = 0;
+            decimal tipPercent = 0;
 
             //Here is how you might do it if you only wanted to give them a limited amount of retries
             int retries = 0;
@@ -19,7 +19,7 @@ namespace TipCalculator
 
                 billInput = billInput.Trim().Trim('$');
 
-                if (double.TryParse(billInput, out bill))
+                if (decimal.TryParse(billInput, out bill))
                 {                    
                     break;
                 }
@@ -42,7 +42,7 @@ namespace TipCalculator
                 string tipPercentInput = Console.ReadLine();
                 tipPercentInput = tipPercentInput.Trim().Trim('%');
 
-                if (double.TryParse(tipPercentInput, out tipPercent))
+                if (decimal.TryParse(tipPercentInput, out tipPercent))
                 {
                     break;
                 }
@@ -58,8 +58,8 @@ namespace TipCalculator
                 }
             }
 
-            double tipAmount = Math.Round(tipPercent * bill / 100, 2);
-            double totalBill = Math.Round(bill + tipAmount, 2);
+            decimal tipAmount = Math.Round(tipPercent * bill / 100, 2);
+            decimal totalBill = Math.Round(bill + tipAmount, 2);
 
             Console.WriteLine($"You tip amount is ${tipAmount}.");
             Console.WriteLine($"Your total bill ${totalBill}.");
