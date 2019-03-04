@@ -6,44 +6,12 @@ namespace TipCalculator
     {
         static void Main(string[] args)
         {
-            decimal bill = 0;
-            decimal tipPercent = 0;
-            int retries = 0;
             int maxRetries = 5;
+            decimal bill = GetParsedInput("What was the bill amount?", maxRetries);
+            decimal tipPercent = GetParsedInput("What percent would you like to tip?", maxRetries);
 
-            while (retries < maxRetries)
-            {
-                Console.WriteLine("What was your bill amount?");
-                string billInput = Console.ReadLine();
-                billInput = billInput.Trim().Trim('$');
-
-                if (decimal.TryParse(billInput, out bill))
-                {                    
-                    break;
-                }
-
-                retries++;
-                PrintRetryResponse(retries, maxRetries, billInput);
-            }
-
-            retries = 0;
-            while (retries < maxRetries)
-            { 
-                Console.WriteLine("What percent would you like to tip?");
-                string tipPercentInput = Console.ReadLine();
-                tipPercentInput = tipPercentInput.Trim().Trim('%');
-
-                if (decimal.TryParse(tipPercentInput, out tipPercent))
-                {
-                    break;
-                }
-
-                retries++;
-                PrintRetryResponse(retries, maxRetries, tipPercentInput);
-            }
-
-            decimal tipAmount = Math.Round(tipPercent * bill / 100, 2);
-            decimal totalBill = Math.Round(bill + tipAmount, 2);
+            decimal tipAmount = CalculateTipAmount(tipPercent, bill);
+            decimal totalBill = CalculateTotalBill(tipAmount, bill);
 
             Console.WriteLine($"You tip amount is ${tipAmount}.");
             Console.WriteLine($"Your total bill ${totalBill}.");
@@ -61,6 +29,41 @@ namespace TipCalculator
             {
                 Console.WriteLine("You have reached the max number of retries.");
             }
+        }
+
+        static decimal GetParsedInput(string prompt, int maxRetries)
+        {
+            int retries = 0;
+            while (retries < maxRetries)
+            {
+                string inputString = GetInput(prompt);
+
+                if (decimal.TryParse(inputString, out decimal parsedInput))
+                {
+                    return parsedInput;
+                }
+
+                retries++;
+                PrintRetryResponse(retries, maxRetries, inputString);
+            }
+            return 0;
+        }
+
+        static string GetInput(string prompt)
+        {
+            Console.WriteLine(prompt);
+            string inputString = Console.ReadLine();
+            return inputString.Trim().Trim(['%', '$']);
+        }
+
+        static decimal CalculateTipAmount(decimal tipPercent, decimal bill)
+        {
+            return Math.Round(tipPercent * bill / 100, 2);
+        }
+
+        private static decimal CalculateTotalBill(decimal tipAmount, decimal bill)
+        {
+           return Math.Round(bill + tipAmount, 2);
         }
     }
 }
