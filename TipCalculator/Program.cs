@@ -53,7 +53,7 @@ namespace TipCalculator
         {
             Console.WriteLine(prompt);
             string inputString = Console.ReadLine();
-            return inputString.Trim().Trim(['%', '$']);
+            return inputString.Trim().Trim('%', '$');
         }
 
         static decimal CalculateTipAmount(decimal tipPercent, decimal bill)
