@@ -5,7 +5,11 @@ VisualStudioVersion = 15.0.28307.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TipCalculator", "TipCalculator\TipCalculator.csproj", "{41A27FD2-0B31-42A2-AB6C-526AB4284457}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomNamePrinter", "RandomNamePrinter\RandomNamePrinter.csproj", "{E03446B7-6B4E-422B-A7A6-1EF3FC809F02}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RandomNamePrinter", "RandomNamePrinter\RandomNamePrinter.csproj", "{E03446B7-6B4E-422B-A7A6-1EF3FC809F02}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LaunchScrabble", "LaunchScrabble\LaunchScrabble.csproj", "{46818A21-9CE4-4EB0-8A02-085BD1F5DC03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SplitAndJoin", "SplitAndJoin\SplitAndJoin.csproj", "{D417B924-4913-4153-8BC7-BB76BA7773E0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{E03446B7-6B4E-422B-A7A6-1EF3FC809F02}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E03446B7-6B4E-422B-A7A6-1EF3FC809F02}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E03446B7-6B4E-422B-A7A6-1EF3FC809F02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46818A21-9CE4-4EB0-8A02-085BD1F5DC03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46818A21-9CE4-4EB0-8A02-085BD1F5DC03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46818A21-9CE4-4EB0-8A02-085BD1F5DC03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46818A21-9CE4-4EB0-8A02-085BD1F5DC03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D417B924-4913-4153-8BC7-BB76BA7773E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D417B924-4913-4153-8BC7-BB76BA7773E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D417B924-4913-4153-8BC7-BB76BA7773E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D417B924-4913-4153-8BC7-BB76BA7773E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
