@@ -12,7 +12,7 @@ namespace LaunchScrabble
             string userInput = Console.ReadLine();
             string[] wordArray = userInput.Trim().ToLower().Split(",");
             int score = GetScore(wordArray);
-
+            Console.WriteLine(GetScore(wordArray));
             Console.WriteLine($"You scored {score} points");
 
             Console.ReadLine();
@@ -24,6 +24,11 @@ namespace LaunchScrabble
             for(int i = 0; i< wordArray.Length; i++)
             {
                 string wordToScore = wordArray[i].Trim();
+                if(String.IsNullOrWhiteSpace(wordToScore))
+                {
+                    continue;
+                }
+
                 if(wordToScore[0] == 'q')
                 {
                     if (wordToScore.Length < 2 || wordToScore[1] != 'u')
@@ -37,7 +42,18 @@ namespace LaunchScrabble
                 }
             }
 
-            return score;
+            return Math.Abs(score);
+        }
+
+        public static int Sum(int value)
+        {
+            int sum = 0;
+            for(int i = 0; i < value; i++)
+            {
+
+            }
+
+            return sum;
         }
     }
 }
