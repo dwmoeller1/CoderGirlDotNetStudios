@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RandomNamePrinter", "Random
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LaunchScrabble", "LaunchScrabble\LaunchScrabble.csproj", "{46818A21-9CE4-4EB0-8A02-085BD1F5DC03}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SplitAndJoin", "SplitAndJoin\SplitAndJoin.csproj", "{D417B924-4913-4153-8BC7-BB76BA7773E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SplitAndJoin", "SplitAndJoin\SplitAndJoin.csproj", "{D417B924-4913-4153-8BC7-BB76BA7773E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppStudio", "WebAppStudio\WebAppStudio.csproj", "{737755D1-6492-4BE4-BE0D-5E3BAEF3E467}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{D417B924-4913-4153-8BC7-BB76BA7773E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D417B924-4913-4153-8BC7-BB76BA7773E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D417B924-4913-4153-8BC7-BB76BA7773E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{737755D1-6492-4BE4-BE0D-5E3BAEF3E467}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{737755D1-6492-4BE4-BE0D-5E3BAEF3E467}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{737755D1-6492-4BE4-BE0D-5E3BAEF3E467}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{737755D1-6492-4BE4-BE0D-5E3BAEF3E467}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
